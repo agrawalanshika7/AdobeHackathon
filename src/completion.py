@@ -13,6 +13,10 @@ def complete_curve(curves, method='linear'):
 
 def handle_occlusion(image_path):
     image = cv2.imread(image_path)
+    
+    if image is None:
+        raise ValueError(f"Image at {image_path} could not be loaded.")
+
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
     contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)

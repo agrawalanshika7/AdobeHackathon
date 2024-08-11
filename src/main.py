@@ -7,9 +7,9 @@ import numpy as np
 import pandas as pd
 from regularization import regularize_curves
 
-from src.symmetry import detect_symmetry
-from src.completion import handle_occlusion
-from src.utils import polylines2svg
+from symmetry import detect_symmetry
+from completion import handle_occlusion
+from utils import polylines2svg
 
 def process_file(file_path, output_path):
     # Step 1: Regularize Curves
